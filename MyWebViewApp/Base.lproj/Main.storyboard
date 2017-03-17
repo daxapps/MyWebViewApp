@@ -51,6 +51,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="aAA-Mr-Jbi">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.99936896559999999" green="0.74338763949999997" blue="0.53373223540000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -60,10 +64,13 @@
                             <constraint firstItem="8LC-oc-QF2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="REM-oP-jca"/>
                             <constraint firstAttribute="trailing" secondItem="8LC-oc-QF2" secondAttribute="trailing" id="eW3-zO-MGD"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Hsx-5E-Rd3" secondAttribute="bottom" id="hk2-Re-eQc"/>
+                            <constraint firstItem="aAA-Mr-Jbi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iB3-lE-VLh"/>
+                            <constraint firstItem="aAA-Mr-Jbi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q6j-RE-kjD"/>
                             <constraint firstAttribute="trailing" secondItem="Hsx-5E-Rd3" secondAttribute="trailing" id="zhT-rs-VGV"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="actInd" destination="aAA-Mr-Jbi" id="kyD-7z-T5F"/>
                         <outlet property="webView" destination="8LC-oc-QF2" id="a5Q-Is-R0t"/>
                     </connections>
                 </viewController>
