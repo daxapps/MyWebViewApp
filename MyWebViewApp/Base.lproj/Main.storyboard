@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,56 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hsx-5E-Rd3">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="rewind" id="6SW-C0-WZY">
+                                        <connections>
+                                            <action selector="goBack" destination="8LC-oc-QF2" id="oZI-bO-y1w"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="fastForward" id="zCo-kI-dje">
+                                        <connections>
+                                            <action selector="goForward" destination="8LC-oc-QF2" id="tcp-aw-4io"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="MtS-Og-lJs"/>
+                                    <barButtonItem systemItem="refresh" id="nhX-Xr-3MS">
+                                        <connections>
+                                            <action selector="reload" destination="8LC-oc-QF2" id="8C4-nb-R4R"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="stop" id="17C-Kz-8a6">
+                                        <connections>
+                                            <action selector="stopLoading" destination="8LC-oc-QF2" id="4aV-7d-I0W"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8LC-oc-QF2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Hsx-5E-Rd3" firstAttribute="top" secondItem="8LC-oc-QF2" secondAttribute="bottom" id="8Uf-sx-HHn"/>
+                            <constraint firstItem="Hsx-5E-Rd3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Bm4-mc-iiS"/>
+                            <constraint firstItem="8LC-oc-QF2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Fzk-rM-6ki"/>
+                            <constraint firstItem="8LC-oc-QF2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="REM-oP-jca"/>
+                            <constraint firstAttribute="trailing" secondItem="8LC-oc-QF2" secondAttribute="trailing" id="eW3-zO-MGD"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Hsx-5E-Rd3" secondAttribute="bottom" id="hk2-Re-eQc"/>
+                            <constraint firstAttribute="trailing" secondItem="Hsx-5E-Rd3" secondAttribute="trailing" id="zhT-rs-VGV"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="8LC-oc-QF2" id="a5Q-Is-R0t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
